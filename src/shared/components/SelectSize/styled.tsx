@@ -16,8 +16,8 @@ export const SelectBoxSize = styled.ul`
         background-color: white;
         color: black;
         border: 1px solid var(--secondary-color);
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         cursor: pointer;
     }
 `

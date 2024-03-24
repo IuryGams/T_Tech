@@ -61,16 +61,11 @@ export const DescriptionProduct = styled.p`
 `
 
 export const BoxOptions = styled.div`
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 45% 55%;
-    grid-template-rows: repeat(3, 40px) 60px;
-    grid-template-areas: 
-    "color color"
-    "size size"
-    "quantity quantity";
-    gap: 12px;
+    gap: 6px;
     margin: 20px 0;
-    align-items: center;
 `
 
 export const ContainerDefinitionList = styled.dl`
@@ -80,7 +75,7 @@ export const ContainerDefinitionList = styled.dl`
     align-items: center;
 
     > dt{
-        width: 45%;
+        width: 35%;
         font-weight: bold;
         font-size: 16px;
         color: var(--text-primary-color);
@@ -112,39 +107,4 @@ export const FullPrice = styled.del`
     font-weight: 400;
     color: var(--subtext-color);
     text-decoration: line-through;
-`
-
-export const BoxBtn = styled.div`
-    grid-column: 2 / 3;
-    grid-row: 4 / 5;
-
-    button{
-        cursor: pointer;
-        background-color: var(--button-color);
-        font-family: 'Nunito', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color: white;
-        border: 2px solid transparent;
-        width: 160px;
-        height: 40px;
-        padding: 0 15px;
-        text-transform: uppercase;
-        font-weight: bold;
-        border-radius: 3px;
-        white-space: nowrap;
-        transition: all 0.3s ease-in-out;
-        font-size: 20px;
-
-        &:hover{
-            gap: 18px;
-            background-color: white;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-
-            svg{
-                opacity: 1;
-                width: initial;
-                height: initial;
-            }
-        }
-    }
 `

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { 
-    BoxBtn, BoxImage, BoxOptions, BoxPrice, BoxProduct, 
+    BoxImage, BoxOptions, BoxPrice, BoxProduct, 
     BoxSliderImage, ContainerGallery, DescriptionProduct, FullPrice, PriceProduct, ProductBody, TitleProduct 
 } from "./styled";
 import FormatCoin from "@/shared/lib/FormatCoin";
@@ -14,6 +14,8 @@ import ProductReview from "@/shared/components/ProductReviews";
 import SelectColor from "@/shared/components/SelectColor";
 import SelectSize from "@/shared/components/SelectSize";
 import { useState } from "react";
+import HorizontalDash from "@/shared/components/HorizontalDash";
+import Button from "@/shared/components/Button";
 
 export default function Product({ product, sizeOption, colorOption }: {
     product?: Products & {
@@ -35,7 +37,7 @@ export default function Product({ product, sizeOption, colorOption }: {
         } else {
             quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1);
         }
-    }
+    };
     
     return (
         <>
@@ -52,7 +54,9 @@ export default function Product({ product, sizeOption, colorOption }: {
 
                 <ProductBody>
                     <TitleProduct>{product?.name}</TitleProduct>
-                    <ProductReview justifyContent="flex-start" gap={1} size={20} reviews={product?.reviews} />
+                    <ProductReview justifyContent="flex-start" gap={1} size={20} 
+                    reviews={product?.reviews} />
+                    <HorizontalDash />
                     <DescriptionProduct>{product?.description}</DescriptionProduct>
                     <BoxOptions>
                         {colorOption && 
@@ -62,8 +66,11 @@ export default function Product({ product, sizeOption, colorOption }: {
                                 setColor={setColor}  
                             />
                         }
+                        <HorizontalDash />
                         {sizeOption && <SelectSize />}
+                        <HorizontalDash />
                         <SelectQuantity quantity={quantity} fnQuantity={changeQuantity} />
+                        <HorizontalDash />
                         <BoxPrice>
                             <PriceProduct>
                                 {FormatCoin(Number(product?.price), "BRL")}
@@ -73,14 +80,14 @@ export default function Product({ product, sizeOption, colorOption }: {
                                 {FormatCoin(Number(product?.price), "BRL")}
                             </FullPrice>
                         </BoxPrice>
-                        <BoxBtn>
-                            <button>
+                        <div style={{width: "180px"}}>
+                            <Button>
                                 Comprar
-                            </button>
-                        </BoxBtn>
+                            </Button>
+                        </div>
                     </BoxOptions>
 
-                    <hr />
+                    <HorizontalDash />
                 </ProductBody>
             </BoxProduct>
         </>

@@ -14,7 +14,7 @@ export default async function ProductPage ({params}: Props) {
 
     return (
         <ContainerProduct>
-            <Product product={data} colorOption />
+            <Product product={data} colorOption sizeOption />
         </ContainerProduct>
     )
 }

@@ -12,7 +12,7 @@ export default function SelectSize() {
     ]
 
     return (
-        <ContainerDefinitionList style={{ gridArea: "size" }}>
+        <ContainerDefinitionList>
             <dt>Tamanho:</dt>
             <dd>
                 <SelectBoxSize >

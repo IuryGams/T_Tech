@@ -11,7 +11,7 @@ export default function SelectQuantity({quantity, fnQuantity} : {
 
 
     return (
-        <ContainerDefinitionList style={{ gridArea: "quantity" }}>
+        <ContainerDefinitionList >
         <dt>Quantidade:</dt>
         <BoxQuantity>
             <IconPlus onClick={() => fnQuantity('less')}  >

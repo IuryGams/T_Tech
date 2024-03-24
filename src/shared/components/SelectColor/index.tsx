@@ -12,7 +12,7 @@ interface ColorProps {
 
 export default function SelectColor({images, color, setColor} : ColorProps) {
     return (
-        <ContainerDefinitionList style={{ gridArea: "color" }}>
+        <ContainerDefinitionList>
             <dt>Cor:</dt>
             <dd>
                 <ColorList>
