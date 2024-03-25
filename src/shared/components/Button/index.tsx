@@ -1,4 +1,5 @@
-import { ReactElement } from 'react';
+"use client";
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
@@ -32,7 +33,7 @@ const StyledButton = styled.button`
 `
 
 export default function Button({children}: {
-    children: string;
+    children: ReactNode;
 }) {
     return <StyledButton>{children}</StyledButton>
 }

@@ -1,6 +1,7 @@
-import { ContainerDefinitionList} from '@/shared/Pages/Product/styled';
 import React from 'react';
 import { SelectBoxSize } from './styled';
+import HorizontalDash from '../HorizontalDash';
+import { ContainerDefinitionList } from '@/styles/genericStyled';
 
 export default function SelectSize() {
 
@@ -12,15 +13,18 @@ export default function SelectSize() {
     ]
 
     return (
-        <ContainerDefinitionList>
-            <dt>Tamanho:</dt>
-            <dd>
-                <SelectBoxSize >
-                    {sizes.map((size, index) => {
-                        return <li key={index} >{size}</li>
-                    })}
-                </SelectBoxSize>
-            </dd>
-        </ContainerDefinitionList>
+        <>
+            <ContainerDefinitionList>
+                <dt>Tamanho:</dt>
+                <dd>
+                    <SelectBoxSize >
+                        {sizes.map((size, index) => {
+                            return <li key={index} >{size}</li>
+                        })}
+                    </SelectBoxSize>
+                </dd>
+            </ContainerDefinitionList>
+            <HorizontalDash />
+        </>
     );
 }

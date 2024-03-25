@@ -2,13 +2,27 @@
 import styled from "styled-components";
 
 
-export const BoxFlex = styled.div<{ 
-    $alignItens: "flex-start" | "center" | "flex-end"; 
-    $justifyContent: "flex-start" | "center" | "flex-end" | "space-between" | "space-evenly" | "space-around";
-}>`
+export const BoxFlex = styled.div`
     display: flex;
-    align-items: ${({$alignItens}) => $alignItens};
-    justify-content: ${({$justifyContent}) => $justifyContent};
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     gap: 12px;
+`
+
+export const ContainerDefinitionList = styled.dl`
+    grid-column: 2 span;
+
+    display: flex;
+    align-items: center;
+
+    > dt{
+        width: 35%;
+        font-weight: bold;
+        font-size: 16px;
+        color: var(--text-primary-color);
+    }
+    > dd {
+        width: fit-content;
+    }
 `
