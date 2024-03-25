@@ -1,11 +1,12 @@
 "use client";
-import { BoxProduct} from "./styled";
+import { BoxProduct } from "./styled";
 import { Images, Products, Reviews } from "@prisma/client";
 import { useState } from "react";
-import ProductBody from "@/shared/components/ProductBody";
-import SliderProduct from "@/shared/components/SliderProduct";
+import ProductBody from "@/shared/components/Product/ProductBody";
+import SliderProduct from "@/shared/components/Product/SliderProduct";
+import ProductDetails from "@/shared/components/Product/ProductDetails";
 
-export default function Product({ product}: {
+export default function Product({ product }: {
     product?: Products & {
         images: Images[]
         reviews: Reviews[]
@@ -14,20 +15,14 @@ export default function Product({ product}: {
 
     const [color, setColor] = useState<string | null>("#000");
 
-    const selectedImage = Number(product?.images.findIndex(image => image.color === color || image.color_code === color));
-
-    
-
     return (
-        <>
+        <main>
             <BoxProduct>
-
-                <SliderProduct product={product} selectedImage={selectedImage}/>
-
+                <SliderProduct product={product} />
                 <ProductBody product={product} colorOption sizeOption color={color} setColor={setColor} />
-
             </BoxProduct>
-        </>
+            <ProductDetails />
+        </main>
     )
 }
 

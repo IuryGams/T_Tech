@@ -44,9 +44,9 @@ export default function Slider({autoSlide = false, autoSlideInterval = 3000} : {
                 {images.map((image, index) => {
                     const { url, title } = image;
                     return (
-                        <figure key={index} >
+                        <picture key={index} >
                             <Image src={url} alt={title} fill />
-                        </figure>
+                        </picture>
                     )
                 })}
             </BoxSlider>

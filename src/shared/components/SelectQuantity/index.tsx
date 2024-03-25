@@ -12,24 +12,24 @@ export default function SelectQuantity({ product }: {
 
     const [quantity, setQuantity] = useState<number>(1);
 
-    const changeQuantity = (value: "plus" | "less") => {
-        if (value === "plus") {
-            quantity < Number(product?.quantity) ? setQuantity(quantity + 1) : setQuantity(Number(product?.quantity))
-        } else {
-            quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1);
-        }
+    const handlePlus = (): void => {
+        quantity < Number(product?.quantity) ? setQuantity(quantity + 1) : setQuantity(Number(product?.quantity))
     };
+
+    const handleLess = (): void => {
+        quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1);
+    }
 
     return (
         <>
             <ContainerDefinitionList >
                 <dt>Quantidade:</dt>
                 <BoxQuantity>
-                    <IconPlus onClick={() => changeQuantity("less")}  >
+                    <IconPlus onClick={handleLess}  >
                         <BsDashLg size={20} aria-disabled={false} />
                     </IconPlus>
                     <input type="text" defaultValue={quantity} readOnly />
-                    <IconDash onClick={() => changeQuantity('plus')}  >
+                    <IconDash onClick={handlePlus}  >
                         <GoPlus />
                     </IconDash>
                 </BoxQuantity>

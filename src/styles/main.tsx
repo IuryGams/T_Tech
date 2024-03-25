@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: aliceblue;
+    background: white;
     min-height: 100dvh;
   }
 `;

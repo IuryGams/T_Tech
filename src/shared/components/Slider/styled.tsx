@@ -20,7 +20,7 @@ export const BoxSlider = styled.div<{ $indexSlider: number }>`
     scroll-behavior: smooth;
     transform: ${({$indexSlider}) => `translateX(-${$indexSlider * 100}%)` };
 
-    figure{
+    picture{
         width: 100%;
         height: 100%;
         flex: none;

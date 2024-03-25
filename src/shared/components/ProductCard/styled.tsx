@@ -89,7 +89,8 @@ export const ContainerCard = styled.div`
     }
 `
 
-export const BoxImage = styled.figure`
+export const BoxImage = styled.picture`
+    display: block;
     position: relative;
     width: 100%;
     height: 160px;

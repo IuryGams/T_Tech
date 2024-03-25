@@ -1,16 +1,12 @@
 "use client";
 import styled from "styled-components";
 
-export const ContainerProduct = styled.section`
+export const BoxProduct = styled.div`
     max-width: 1440px;
     margin: 0 auto;
-    background-color: white;
-`
-
-
-export const BoxProduct = styled.div`
     display: flex;
+    width: 100%;
     padding: 1em;
-    gap: 8px;
+    gap: 30px;
 `
 
