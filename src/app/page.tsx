@@ -1,15 +1,18 @@
 
 import FeaturedSession from "@/shared/components/FeaturedSession";
-import { BoxArrows, BoxCarroselItems, BoxContent, ContainerGrid } from "@/shared/components/FeaturedSession/styled";
+import { ContainerGrid } from "@/shared/components/FeaturedSession/styled";
 import Slider from "@/shared/components/Slider";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { SessionCategories } from "@/shared/components/DepartamentBox/styled";
 import DepartamentBox from "@/shared/components/DepartamentBox";
 import getAllProducts from "@/shared/actions/getAllProducts";
 import ProductCard from "@/shared/components/ProductCard";
+import CarrouselProducts from "@/shared/components/CarrouselProducts";
+
 
 export default async function Home() {
-  const products = await getAllProducts();
+
+  const products = await getAllProducts()
 
   const categories = [
     {
@@ -35,19 +38,7 @@ export default async function Home() {
       <Slider autoSlide autoSlideInterval={5000} />
 
       <FeaturedSession title="Promoção Semana do consumidor">
-        <BoxContent>
-          <BoxArrows>
-            <FaAngleLeft size={50} />
-          </BoxArrows>
-          
-          <BoxCarroselItems>
-            {products?.map(product => <ProductCard key={product.id} path={product.id} product={product} /> )}
-          </BoxCarroselItems>
-          
-          <BoxArrows>
-            <FaAngleRight size={50} />
-          </BoxArrows>
-        </BoxContent>
+          <CarrouselProducts  products={products} />
       </FeaturedSession>
 
 
@@ -65,7 +56,7 @@ export default async function Home() {
 
       <FeaturedSession title="Mais Procurados" >
         <ContainerGrid>
-        {products?.map(product => <ProductCard key={product.id} path={product.id} product={product} /> )}
+          {/* {products?.map(product => <ProductCard key={product.id} path={product.id} product={product} /> )} */}
         </ContainerGrid>
       </FeaturedSession>
 

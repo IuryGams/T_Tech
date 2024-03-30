@@ -115,11 +115,11 @@ export const FavButton = styled.button`
     align-items: center;
     gap: 8px;
     padding: 10px;
-    border: none;
+    border: 1px solid var(--text-primary-color);
     background-color: transparent;
     cursor: pointer;
     font-size: 16px;
-    color: var(--button-color);
+    color: var(--text-primary-color);
     transition: all 0.2s;
 
     &:hover{

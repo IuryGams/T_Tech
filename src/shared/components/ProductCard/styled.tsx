@@ -148,14 +148,16 @@ export const Title = styled.h3`
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-break: break-word;
-    height: 52px;
-    max-height: 3.375rem;
+    height: 36px;
+    max-height: 36px;
 `
 
 export const Price = styled.h4`
+    display: flex;
+    flex-direction: column;
     font-size: 22px;
     color: var(--primary-color);
     margin-bottom: 10px;

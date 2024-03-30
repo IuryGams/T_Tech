@@ -1,8 +1,11 @@
 "use client";
 import { ReactNode } from 'react';
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 
 const StyledButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     background-color: var(--button-color);
     font-family: 'Nunito', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -32,9 +35,10 @@ const StyledButton = styled.button`
     }
 `
 
-export default function Button({children}: {
+export default function Button({children, styles}: {
     children: ReactNode;
+    styles?: CSSProperties;
 }) {
-    return <StyledButton>{children}</StyledButton>
+    return <StyledButton style={styles}>{children}</StyledButton>
 }
 
