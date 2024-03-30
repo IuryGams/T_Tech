@@ -5,17 +5,18 @@ export default async function getAllProducts () {
 
     try{
         const response = await db.products.findMany({
-            include: {
-                images: true,
-                category: {
-                    select: {
-                        name: true
-                    }
-                },
+        include: {
+            images: true,
+            category: {
+                select: {
+                    name: true
+                }
+            },
                 reviews: true
             }
         });
-        return response
+
+        return response;
     } catch (error) {
         console.error(error);
     }

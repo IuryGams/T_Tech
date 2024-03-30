@@ -1,7 +1,5 @@
 "use server"
-import { ProductProps } from "@/types";
 import { db } from "../lib/prisma";
-import Product from "../Pages/Product";
 
 interface Props {
     params: {
