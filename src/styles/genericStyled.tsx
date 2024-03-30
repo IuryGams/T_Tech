@@ -26,3 +26,14 @@ export const ContainerDefinitionList = styled.dl`
         width: fit-content;
     }
 `
+
+export const LimitSlider = styled.div`
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    > div {
+        height: 100%;
+    }
+`

@@ -46,6 +46,10 @@ const NextConfig = {
             protocol: 'https',
             hostname: 'store.storeimages.cdn-apple.com',
           },
+          {
+            protocol: 'https',
+            hostname: 'samsungbrshop.vtexassets.com',
+          },
           
         ],
       },

@@ -18,7 +18,7 @@ export default function Header() {
                     <SearchInput />
                 </div>
                 <BoxItem>
-                    <LinkPrimaryOption href="">
+                    <LinkPrimaryOption href="/favorites">
                         <BoxIcon>
                             <BsBox2 size={25} />
                         </BoxIcon>

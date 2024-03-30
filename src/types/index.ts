@@ -1,12 +1,24 @@
-import { Categories, Images, Products } from "@prisma/client";
+import { Categories, Images, Products, Reviews } from "@prisma/client";
+import { Decimal } from "@prisma/client/runtime/library";
+import { DateTime } from "next-auth/providers/kakao";
 
-export interface CardProps {
-    product?: Products | null
-    images?: Images[] | null;
-    category: Categories
-}
+// export type ProductsProps = {
+//     products?: Products[]; & {
+//         images: Images[];
+//         reviews: Reviews[];
+//         category: {
+//             name: string
+//         }
+//     }
+// }
 
-export interface ProductProps {
-    product: Products;
-    images: Images[];
-}
+
+export type ProductProps = {
+    product: Products & {
+        images: Images[];
+        reviews: Reviews[];
+        category: {
+            name: string
+        }
+    }
+  }
